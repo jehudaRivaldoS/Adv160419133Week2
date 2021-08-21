@@ -40,11 +40,13 @@ class GameFragment : Fragment() {
                 val randomNumber2 = (0..999).random()
                 txtQuestion.text = "${randomNumber1.toString()} + ${randomNumber2.toString()}"
                 answer = randomNumber1.toInt() + randomNumber2.toInt()
+                txtAnswer.setText("")
             }
             else
             {
                 val action = GameFragmentDirections.actionResultFragment(point.toInt())
                 Navigation.findNavController(it).navigate(action)
+                txtAnswer.setText("")
             }
         }
 
